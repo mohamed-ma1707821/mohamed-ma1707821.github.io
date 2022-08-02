@@ -1,0 +1,200 @@
+.galleryNote{
+    color: white;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+
+/*EXP*/
+.gallery {
+    display: flex;
+    padding: 2px;
+    padding-top: 0px;
+    transition: 0.3s;
+    min-height: 50vh;
+    /*align-self:stretch;*/
+}
+.gallery:hover .gallery__image {
+    filter: grayscale(1);
+}
+.gallery__column {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.gallery__link {
+    margin: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gallery__link:hover .gallery__image {
+    filter: grayscale(0);
+}
+.gallery__link:hover .gallery__caption {
+    opacity: 1;
+}
+.gallery__thumb {
+    position: relative;
+    margin: 0px;
+}
+.gallery__image {
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+}
+.gallery__image:hover {
+    transform: scale(1.1);
+}
+.gallery__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px 15px 15px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: white;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+}
+
+.noTopMargin{
+    margin-top: 0px;
+}
+.noMaxWidth{
+    max-width: none;
+}
+
+.fillRemain{
+    flex-grow: 1
+}
+
+/* loading Issue !*/
+#loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.loadeParent{
+    height: 100vh;
+    width: 100%;
+}
+/* Typing effect */
+
+/*#text{*/
+/*    color: green;*/
+/*    font-family: Courier New;*/
+/*    font-size: 30px;*/
+/*    text-shadow: 0px 0px 10px green, 0px 0px 5px green;*/
+/*}*/
+
+
+
+/*HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
+/* To view */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    padding-top: 10%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
